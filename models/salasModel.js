@@ -18,47 +18,6 @@ function getAllSalas(callback) {
         callback(err, rows);
     });
 }
-
-// Função para buscar um cliente por ID
-function getSalasById(id, callback) {
-    const db = openDbConnection();
-    db.get("SELECT * FROM Sala WHERE id = ?", [id], (err, row) => {
-        db.close();
-        callback(err, row);
-    });
-}
-// Função para criar um novo cliente
-function createSalas(Salas, callback) {
-    const { id, nome, bloco } = Salas;
-    const db = openDbConnection();
-    db.run("INSERT INTO Sala (id, nome, bloco) VALUES (?, ?, ?, ?)", [id,
-        nome, bloco], function (err) {
-            db.close();
-            callback(err, { id: this.lastID });
-        });
-}
-// Função para atualizar um cliente existente
-function updateSalas(id, nome, bloco) {
-    const { id, nome, bloco } = Salas;
-    const db = openDbConnection();
-    db.run("UPDATE Sala SET id = ?, nome = ?, bloco = ? WHERE id = ?",
-        [id, nome, bloco], function (err) {
-            db.close();
-            callback(err, { changes: this.changes });
-        });
-}
-// Função para deletar um cliente
-function deleteSalas(id, callback) {
-    const db = openDbConnection();
-    db.run("DELETE FROM Sala WHERE id = ?", [id], function (err) {
-        db.close();
-        callback(err, { changes: this.changes });
-    });
-}
 module.exports = {
     getAllSalas,
-    getSalasById,
-    createSalas,
-    updateSalas,
-    deleteSalas,
 };
