@@ -1,4 +1,4 @@
-//Visao.js
+//Alocacao.js
 const sqlite3 = require('sqlite3').verbose();
 const dbPath = '../database.db';
 // Função para abrir conexão com o banco de dados
@@ -11,7 +11,7 @@ function openDbConnection() {
     return db;
 }
 // Função para buscar todos os clientes
-function getAllVisao(callback) {
+function getVisaoById(callback) {
     const db = openDbConnection();
     db.all("SELECT * FROM Visao", [], (err, rows) => {
         db.close();
@@ -20,5 +20,5 @@ function getAllVisao(callback) {
 }
 
 module.exports = {
-    getAllVisao,
+    getVisaoById,
 };
