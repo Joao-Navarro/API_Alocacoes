@@ -1,7 +1,7 @@
 const Visao = require('../models/visaoAlocacoesModel');
 
-exports.getVisaoById = (req, res) => {
-    Visao.getVisaoById((err, Visao) => {
+exports.getAllVisao = (req, res) => {
+    Visao.getAllVisao((err, Visao) => {
         if (err) {
             res.status(500).send(err);
         } else {

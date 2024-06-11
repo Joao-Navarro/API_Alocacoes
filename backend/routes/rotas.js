@@ -13,7 +13,7 @@ router.get('/salas', salasController.getAllSalas);
 
 const visaoAlocacoesController = require('../controllers/visaoAlocacoesController');
 
-router.get('/visaoAlocacao/:id', visaoAlocacoesController.getVisaoById);
+router.get('/visaoAlocacao/:id', visaoAlocacoesController.getAllVisao);
 
 const alocacoesController = require('../controllers/alocacoesController');
 
