@@ -13,7 +13,7 @@ function openDbConnection() {
 // Função para buscar todos os clientes
 function getVisaoById(callback) {
     const db = openDbConnection();
-    db.all("SELECT * FROM Visao", [], (err, rows) => {
+    db.all("SELECT * FROM VISAO_ALOCACAO WHERE ID = ?", [], (err, rows) => {
         db.close();
         callback(err, rows);
     });
