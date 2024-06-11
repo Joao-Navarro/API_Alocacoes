@@ -1,11 +1,11 @@
-const Alocacoes = require('../models/alocacoesModel');
+const Alocacao = require('../models/alocacoesModel');
 
-exports.getAlocacoesById = (req, res) => {
-    Alocacoes.getAlocacoesById(req.params.id, (err, Alocacoes) => {
+exports.getAllAlocacao = (req, res) => {
+    Alocacao.getAllAlocacao(req.params.id, (err, Alocacao) => {
         if (err) {
             res.status(500).send(err);
-        } else if (Alocacoes) {
-            res.json(Alocacoes);
+        } else if (Alocacao) {
+            res.json(Alocacao);
         } else {
             res.status(404).send({ message: 'Alocacoes não encontrado' });
         }
