@@ -1,12 +1,12 @@
 //ProfessoresController.js
-const Professores = require('../models/professoresModel');
+const Professor = require('../models/professoresModel');
 
-exports.getAllProfessoress = (req, res) => {
-    Professores.getAllProfessoress((err, Professoress) => {
+exports.getAllProfessor = (req, res) => {
+    Professor.getAllProfessor((err, Professor) => {
         if (err) {
             res.status(500).send(err);
         } else {
-            res.json(Professoress);
+            res.json(Professor);
         }
     });
 };
