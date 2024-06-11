@@ -1,8 +1,8 @@
 //ProfessoresController.js
 const Professores = require('../models/professoresModel');
 
-exports.getAllProfessoress = (req, res) => {
-    Professores.getAllProfessoress((err, Professoress) => {
+exports.getAllProfessores = (req, res) => {
+    Professores.getAllProfessores((err, Professoress) => {
         if (err) {
             res.status(500).send(err);
         } else {

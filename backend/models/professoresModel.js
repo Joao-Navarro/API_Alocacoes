@@ -11,7 +11,7 @@ function openDbConnection() {
     return db;
 }
 // Função para buscar todos os clientes
-function getAllProfessor(callback) {
+function getAllProfessores(callback) {
     const db = openDbConnection();
     db.all("SELECT * FROM Professor", [], (err, rows) => {
         db.close();
@@ -20,5 +20,5 @@ function getAllProfessor(callback) {
 }
 
 module.exports = {
-    getAllProfessor,
+    getAllProfessores,
 };

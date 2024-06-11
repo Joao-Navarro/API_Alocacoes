@@ -5,7 +5,7 @@ const express = require("express");
 const cors = require("cors");
 
 // Importa as rotas de produtos definidas em outro arquivo
-const Routes = require("./routes");
+const Routes = require("./routes/rotas");
 
 // Cria uma instância do aplicativo express
 const app = express();
@@ -20,11 +20,11 @@ app.use(cors());
 app.use(express.json());
 
 // Define o prefixo "/api" para as rotas de produtos
-app.use("/api", Routes);
+app.use("/alocacoes", Routes);
 
 // Middleware de tratamento de erros
 app.use((err, req, res, next) => {
-  // Loga a stack trace do erro no console
+  // Loga a stack trace do erro no cons4ole
   console.error(err.stack);
   // Envia uma resposta de erro com status 500 e uma mensagem de erro em formato JSON
   res.status(500).json({ error: 'Algo deu errado!' });
