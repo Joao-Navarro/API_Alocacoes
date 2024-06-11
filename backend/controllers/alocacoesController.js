@@ -1,7 +1,7 @@
 const Alocacao = require('../models/alocacoesModel');
 
 exports.getAllAlocacao = (req, res) => {
-    Alocacao.getAllAlocacao(req.params.id, (err, Alocacao) => {
+    Alocacao.getAllAlocacao((err, Alocacao) => {
         if (err) {
             res.status(500).send(err);
         } else if (Alocacao) {
