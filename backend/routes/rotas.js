@@ -4,18 +4,18 @@ const router = express.Router();
 
 const professoresController = require('../controllers/professoresController');
 
-router.get('/', professoresController.getAllProfessor);
+router.get('/professor', professoresController.getAllProfessor);
 
 const salasController = require('../controllers/salasController');
 
-router.get('/', salasController.getAllSalas);
+router.get('/salas', salasController.getAllSalas);
 
 const visaoAlocacoesController = require('../controllers/visaoAlocacoesController');
 
-router.get('/', visaoAlocacoesController.getVisaoById);
+router.get('/visaoAlocacao/:id', visaoAlocacoesController.getVisaoById);
 
 const alocacoesController = require('../controllers/alocacoesController');
 
-router.get('/', alocacoesController.getAllAlocacao);
+router.get('/alocacao', alocacoesController.getAllAlocacao);
 
 module.exports = router;
