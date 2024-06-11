@@ -20,7 +20,7 @@ app.use(cors());
 app.use(express.json());
 
 // Define o prefixo "/api" para as rotas de produtos
-app.use("/alocacoes", Routes);
+app.use("/", Routes);
 
 // Middleware de tratamento de erros
 app.use((err, req, res, next) => {
